@@ -1,0 +1,129 @@
+.about-us {
+  padding: 4rem 0;
+  background-color: #f9f9ff;
+}
+
+.about-content {
+  display: flex;
+  gap: 60px;
+  margin-top: 2rem;
+}
+
+.about-image-placeholder {
+  flex: 1;
+  min-height: 600px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.about-stats {
+  display: flex;
+  gap: 100px;
+  margin-bottom: 3rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #6200EA;
+}
+
+.stat-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #6200EA;
+}
+
+.about-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-card {
+  background-color: #ffcdd2;
+  border-radius: 15px;
+  padding: 25px;
+  transition: transform 0.3s ease;
+}
+
+.about-card:nth-child(1) {
+  background-color: #ffcdd2;
+}
+
+.about-card:nth-child(2) {
+  background-color: #ffecb3;
+}
+
+.about-card:nth-child(3) {
+  background-color: #e1bee7;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.card-icon {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.about-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-image-placeholder {
+    width: 100%;
+    min-height: 400px;
+  }
+  
+  .about-stats {
+    justify-content: center;
+    gap: 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-stats {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .stat-item {
+    align-items: center;
+  }
+} 

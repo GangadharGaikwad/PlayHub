@@ -1,0 +1,433 @@
+.venue-detail-page {
+  padding: 2rem 0;
+  position: relative;
+  background-color: #f9f9ff;
+  min-height: 100vh;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.circle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.circle-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.back-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.venue-detail-container {
+  display: flex;
+  gap: 40px;
+  padding-top: 30px;
+}
+
+.venue-gallery {
+  flex: 1;
+  max-width: 50%;
+}
+
+.main-image-container {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 20px;
+}
+
+.venue-main-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background-color: #ddd;
+  background-image: url('https://via.placeholder.com/800x450');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail-container {
+  display: flex;
+  gap: 15px;
+}
+
+.thumbnail {
+  width: 110px;
+  height: 110px;
+  border-radius: 8px;
+  background-color: #ddd;
+  background-image: url('https://via.placeholder.com/110x110');
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.venue-details {
+  flex: 1;
+  max-width: 50%;
+}
+
+.venue-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.venue-location {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.venue-features {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  color: #666;
+}
+
+.feature-icon {
+  font-size: 1.2rem;
+}
+
+.venue-rating {
+  color: #FFD700;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.star {
+  margin-right: 3px;
+}
+
+.half {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 0.7em;
+}
+
+.venue-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.booking-section {
+  margin-top: 20px;
+  position: relative;
+}
+
+.book-now-button {
+  background-color: #FF4081;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 35px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.book-now-button:hover {
+  background-color: #e91e63;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.arrow-icon {
+  font-size: 1.2rem;
+}
+
+.calendar-container {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 320px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 10;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.current-month {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.month-nav {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.month-nav:hover {
+  color: #333;
+}
+
+.calendar {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.calendar th {
+  padding: 5px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.calendar td {
+  padding: 5px;
+  text-align: center;
+  font-size: 0.9rem;
+  width: 14.28%;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.calendar-day:hover {
+  background-color: #f3f3f3;
+  border-radius: 50%;
+}
+
+.calendar-day.selected {
+  background-color: #FF4081;
+  color: white;
+  border-radius: 50%;
+}
+
+.empty-day {
+  color: #ddd;
+  cursor: default;
+}
+
+.selected-date-info {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.confirm-booking {
+  display: block;
+  width: 100%;
+  background-color: #6200EA;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.confirm-booking:hover {
+  background-color: #5000c9;
+}
+
+.venue-navigation {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 20px auto 0;
+  padding: 0 20px;
+}
+
+.nav-arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.nav-arrow span {
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 992px) {
+  .venue-detail-container {
+    flex-direction: column;
+  }
+  
+  .venue-gallery, .venue-details {
+    max-width: 100%;
+  }
+  
+  .main-image-container {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .venue-name {
+    font-size: 2rem;
+  }
+  
+  .thumbnail-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .thumbnail {
+    width: 100%;
+    height: 80px;
+  }
+  
+  .calendar-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .venue-gallery {
+    margin-top: 20px;
+  }
+  
+  .main-image-container {
+    height: 250px;
+  }
+  
+  .thumbnail-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .thumbnail {
+    height: 100px;
+  }
+}
+
+.login-prompt {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 320px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 10;
+}
+
+.login-prompt-content {
+  text-align: center;
+}
+
+.login-prompt-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.login-prompt-content p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.login-prompt-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.login-prompt-button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-prompt-button.login {
+  background-color: #6200EA;
+  color: white;
+}
+
+.login-prompt-button.login:hover {
+  background-color: #5000c9;
+}
+
+.login-prompt-button.cancel {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.login-prompt-button.cancel:hover {
+  background-color: #e0e0e0;
+} 

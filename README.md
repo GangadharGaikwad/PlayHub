@@ -1,70 +1,205 @@
-# Getting Started with Create React App
+# PlayHub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+PlayHub is a modern React application designed to help users discover and book esports venues around the world. It features a user-friendly interface with responsive design and a complete authentication system.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Application Structure](#application-structure)
+- [Authentication System](#authentication-system)
+- [Venue Booking System](#venue-booking-system)
+- [Components](#components)
+- [Pages](#pages)
+- [Styling](#styling)
+- [Installation and Setup](#installation-and-setup)
+- [Usage](#usage)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Venue Discovery**: Browse and search for esports venues worldwide
+- **Detailed Venue Pages**: View comprehensive information about each venue
+- **Venue Booking**: Interactive calendar for selecting booking dates
+- **User Authentication**: Complete login, signup, and password recovery system
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Modern UI**: Clean, intuitive user interface with smooth animations
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Application Structure
 
-### `npm test`
+PlayHub follows a component-based architecture using React and React Router for navigation. The application is organized as follows:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+play-hub/
+├── public/             # Static files
+├── src/                # Source code
+│   ├── components/     # Reusable components
+│   ├── pages/          # Page components
+│   ├── App.js          # Main application component
+│   ├── App.css         # Global styles
+│   └── index.js        # Entry point
+└── package.json        # Dependencies and scripts
+```
 
-### `npm run build`
+## Authentication System
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+PlayHub includes a complete authentication system with the following features:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Login
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Email and password authentication
+- Remember me functionality
+- Form validation
+- Redirect to previous page after login
 
-### `npm run eject`
+### Sign Up
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- User registration with name, email, and password
+- Password confirmation
+- Terms of service acceptance
+- Form validation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Password Recovery
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Email-based password recovery
+- Success confirmation message
+- Form validation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Authentication State
 
-## Learn More
+- Authentication state is stored in localStorage
+- Protected routes require authentication
+- Login status is maintained across the application
+- Automatic redirection to login when accessing protected resources
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Venue Booking System
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The venue booking system allows users to:
 
-### Code Splitting
+1. Browse venues on the Home and Venues pages
+2. View detailed information about each venue on the VenueDetail page
+3. Select booking dates using an interactive calendar
+4. Complete booking (requires authentication)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Booking Process:
 
-### Analyzing the Bundle Size
+1. User selects a venue by clicking on a venue card
+2. User is directed to the venue detail page
+3. If the user is not logged in and attempts to book, a login prompt appears
+4. After logging in, the user is redirected back to the venue detail page
+5. User can select a date from the calendar
+6. User confirms the booking
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Components
 
-### Making a Progressive Web App
+### Navbar
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The navigation bar provides access to all main sections of the application and displays login/logout options.
 
-### Advanced Configuration
+- Dynamic links to main pages
+- Responsive design with hamburger menu for mobile
+- Authentication-aware: shows Login or Logout based on user status
+- Active link highlighting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Footer
 
-### Deployment
+The footer contains additional navigation links and information about PlayHub.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Venue Cards
 
-### `npm run build` fails to minify
+Venue cards display preview information about each venue:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Venue name and location
+- Rating
+- Featured image
+- Clickable links to venue detail pages
+
+## Pages
+
+### Home
+
+The home page showcases featured venues and provides an introduction to PlayHub.
+
+### Venues
+
+The venues page displays a grid of venue cards, allowing users to browse all available venues.
+
+### VenueDetail
+
+The venue detail page provides comprehensive information about a specific venue:
+
+- Image gallery
+- Venue name, location, and rating
+- Features and amenities
+- Description
+- Booking calendar (requires authentication)
+- Navigation to other venues
+
+### Authentication Pages
+
+- **Login**: User login form
+- **Signup**: New user registration form
+- **ForgotPassword**: Password recovery form
+
+## Styling
+
+PlayHub uses a consistent design system defined with CSS variables:
+
+```css
+:root {
+  --primary: #6200ea;
+  --primary-dark: #5100c9;
+  --accent: #00e7ff;
+  --text-primary: #333333;
+  --text-secondary: #777777;
+}
+```
+
+Components follow this design system for a cohesive look and feel across the application.
+
+## Installation and Setup
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/play-hub.git
+   cd play-hub
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+3. Start the development server:
+   ```
+   npm start
+   ```
+
+4. The application will be available at http://localhost:3000
+
+## Usage
+
+### Browsing Venues
+
+1. Navigate to the Home or Venues page
+2. Click on any venue card to view details
+
+### Booking a Venue
+
+1. Navigate to a venue detail page
+2. Click the "Book Now" button
+3. If not logged in, you'll be prompted to log in
+4. After logging in, select a date from the calendar
+5. Confirm your booking
+
+### User Authentication
+
+1. **Login**: Click the "Log In" button in the navigation bar
+2. **Sign Up**: Click "Sign Up" on the login page
+3. **Forgot Password**: Click "Forgot password?" on the login page
+
+### Demo Accounts
+
+For demonstration purposes, any valid email format and password (minimum 6 characters) will work.
+
+---
+
+© 2023 PlayHub. All rights reserved.
