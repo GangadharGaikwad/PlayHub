@@ -159,7 +159,7 @@ Components follow this design system for a cohesive look and feel across the app
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/play-hub.git
+   git clone https://github.com/GangadharGaikwad/PlayHub.git
    cd play-hub
    ```
 
